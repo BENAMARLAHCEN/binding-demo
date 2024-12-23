@@ -1,0 +1,21 @@
+.binding-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .example-row {
+    margin-bottom: 20px;
+  }
+  
+  h4 {
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  

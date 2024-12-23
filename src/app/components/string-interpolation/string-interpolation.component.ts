@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
+import { CardHeaderComponent } from '../shared/card-header.component';
 
 @Component({
   selector: 'app-string-interpolation',
   standalone: true,
+  imports: [CardHeaderComponent],
   template: `
     <div class="binding-card">
-      <div class="card-header">
-        <h3>String Interpolation</h3>
-        <span class="syntax-hint">Syntax: {{ '{{ expression }}' }}</span>
-      </div>
-      
+      <app-card-header title="String Interpolation" syntax="{{ '{{ expression }}' }}"></app-card-header>
       <div class="card-content">
         <div class="example-row">
           <p>User Profile:</p>
@@ -20,7 +18,6 @@ import { Component } from '@angular/core';
             <li>Join Date: {{ getFormattedDate() }}</li>
           </ul>
         </div>
-
         <div class="example-row">
           <p>Calculated Values:</p>
           <ul>
@@ -33,9 +30,6 @@ import { Component } from '@angular/core';
     </div>
   `,
   styles: [`
-    .example-row {
-      margin: 15px 0;
-    }
     ul {
       list-style-type: none;
       padding-left: 20px;

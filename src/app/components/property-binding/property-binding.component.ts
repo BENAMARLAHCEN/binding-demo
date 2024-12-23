@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
+import { CardHeaderComponent } from '../shared/card-header.component';
 
 @Component({
   selector: 'app-property-binding',
   standalone: true,
+  imports: [CardHeaderComponent],
   template: `
     <div class="binding-card">
-      <div class="card-header">
-        <h3>Property Binding</h3>
-        <span class="syntax-hint">Syntax: [property]="expression"</span>
-      </div>
-
+      <app-card-header title="Property Binding" syntax="[property]='expression'"></app-card-header>
       <div class="card-content">
         <div class="example-row">
           <h4>Button States:</h4>
@@ -20,7 +18,6 @@ import { Component } from '@angular/core';
             {{ isDisabled ? 'Disabled Button' : 'Active Button' }}
           </button>
         </div>
-
         <div class="example-row">
           <h4>Dynamic Styles:</h4>
           <div [style.background-color]="backgroundColor"
@@ -29,13 +26,6 @@ import { Component } from '@angular/core';
                class="style-box">
             Styled with Property Binding
           </div>
-        </div>
-
-        <div class="example-row">
-          <h4>Dynamic Image:</h4>
-          <img [src]="imageUrl" 
-               [alt]="imageAlt"
-               [width]="imageWidth">
         </div>
       </div>
     </div>
@@ -61,9 +51,6 @@ export class PropertyBindingComponent {
   backgroundColor = '#2ecc71';
   padding = 20;
   borderRadius = 8;
-  imageUrl = '/api/placeholder/200/150';
-  imageAlt = 'Demo Image';
-  imageWidth = 200;
 
   toggleButton() {
     this.isDisabled = !this.isDisabled;
